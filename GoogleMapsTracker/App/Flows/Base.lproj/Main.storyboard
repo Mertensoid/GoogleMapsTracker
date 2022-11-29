@@ -12,16 +12,28 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleMapsTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GMSMapView">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTr-Z3-cmq" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gTr-Z3-cmq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EZ1-iC-qiZ"/>
+                            <constraint firstItem="gTr-Z3-cmq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ver-ij-dTz"/>
+                            <constraint firstAttribute="bottom" secondItem="gTr-Z3-cmq" secondAttribute="bottom" id="aK9-6J-Heb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTr-Z3-cmq" secondAttribute="trailing" id="wZx-KL-s2v"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="4"/>
+            <point key="canvasLocation" x="-108" y="90"/>
         </scene>
     </scenes>
     <resources>

@@ -135,14 +135,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8463C6022936115900F14B47 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				848BB387292BAE3900D19CEA /* AppDelegate.swift */,
+				848BB389292BAE3900D19CEA /* SceneDelegate.swift */,
+				8463C606293611A100F14B47 /* Flows */,
+				8463C607293611AA00F14B47 /* Assembly */,
+				8463C608293611BA00F14B47 /* Entity */,
+				8463C609293611C400F14B47 /* BuissnessLogic */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8463C6032936116900F14B47 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8463C6042936117600F14B47 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				848BB390292BAE3B00D19CEA /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		8463C6052936117E00F14B47 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				848BB395292BAE3B00D19CEA /* Info.plist */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		8463C606293611A100F14B47 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				848BB38D292BAE3900D19CEA /* Main.storyboard */,
+				848BB392292BAE3B00D19CEA /* LaunchScreen.storyboard */,
+				8463C60A293611FC00F14B47 /* ViewControllers */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		8463C607293611AA00F14B47 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8463C608293611BA00F14B47 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8463C609293611C400F14B47 /* BuissnessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BuissnessLogic;
+			sourceTree = "<group>";
+		};
+		8463C60A293611FC00F14B47 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				848BB38B292BAE3900D19CEA /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		848BB37B292BAE3900D19CEA = {
 			isa = PBXGroup;
 			children = (
-				84AF5224292BB20E000E3CC4 /* GoogleMaps.bundle */,
-				84AF51FD292BAF62000E3CC4 /* Frameworks */,
 				848BB386292BAE3900D19CEA /* GoogleMapsTracker */,
 				848BB39D292BAE3B00D19CEA /* GoogleMapsTrackerTests */,
 				848BB3A7292BAE3B00D19CEA /* GoogleMapsTrackerUITests */,
+				84AF5224292BB20E000E3CC4 /* GoogleMaps.bundle */,
+				84AF51FD292BAF62000E3CC4 /* Frameworks */,
 				848BB385292BAE3900D19CEA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,13 +235,10 @@
 		848BB386292BAE3900D19CEA /* GoogleMapsTracker */ = {
 			isa = PBXGroup;
 			children = (
-				848BB387292BAE3900D19CEA /* AppDelegate.swift */,
-				848BB389292BAE3900D19CEA /* SceneDelegate.swift */,
-				848BB38B292BAE3900D19CEA /* ViewController.swift */,
-				848BB38D292BAE3900D19CEA /* Main.storyboard */,
-				848BB390292BAE3B00D19CEA /* Assets.xcassets */,
-				848BB392292BAE3B00D19CEA /* LaunchScreen.storyboard */,
-				848BB395292BAE3B00D19CEA /* Info.plist */,
+				8463C6022936115900F14B47 /* App */,
+				8463C6032936116900F14B47 /* Core */,
+				8463C6042936117600F14B47 /* Resourses */,
+				8463C6052936117E00F14B47 /* Environments */,
 			);
 			path = GoogleMapsTracker;
 			sourceTree = "<group>";
@@ -529,7 +601,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GoogleMapsTracker/Info.plist;
+				INFOPLIST_FILE = GoogleMapsTracker/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -557,7 +629,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GoogleMapsTracker/Info.plist;
+				INFOPLIST_FILE = GoogleMapsTracker/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
