@@ -20,23 +20,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhI-a7-Xqh">
-                                <rect key="frame" x="323" y="748" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="KUQ-w3-Bc8"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="OfN-ey-mIK"/>
-                                    <constraint firstAttribute="height" constant="50" id="TgS-Iv-vkn"/>
-                                    <constraint firstAttribute="width" constant="50" id="e1Y-hL-Lbr"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="location.fill" catalog="system">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="goToCurrentLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aD6-ci-CG1"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BVD-Tg-2dQ">
                                 <rect key="frame" x="323" y="366" width="50" height="120"/>
                                 <subviews>
@@ -72,17 +55,82 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pzq-Ue-ROg">
+                                <rect key="frame" x="20" y="608" width="50" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqf-Rf-nb4">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ZUu-Ed-mfS"/>
+                                            <constraint firstAttribute="height" constant="50" id="kEU-py-d8x"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="map" catalog="system"/>
+                                        <connections>
+                                            <action selector="startNewTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bTV-CJ-VUg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dki-19-UT7">
+                                        <rect key="frame" x="0.0" y="70" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1KM-ep-5Ho"/>
+                                            <constraint firstAttribute="width" constant="50" id="CWh-8b-ydu"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="stop.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="stopTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJA-Zz-IvE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ik8-3P-z9l">
+                                        <rect key="frame" x="0.0" y="140" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="UMV-3c-z25"/>
+                                            <constraint firstAttribute="height" constant="50" id="ugy-c7-FSq"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="externaldrive.badge.timemachine" catalog="system"/>
+                                        <connections>
+                                            <action selector="loadPreviousTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6tP-2S-ZCX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhI-a7-Xqh">
+                                <rect key="frame" x="323" y="748" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TgS-Iv-vkn"/>
+                                    <constraint firstAttribute="width" constant="50" id="e1Y-hL-Lbr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToCurrentLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aD6-ci-CG1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uhI-a7-Xqh" secondAttribute="bottom" constant="20" id="6Ji-Eg-GKq"/>
+                            <constraint firstItem="Pzq-Ue-ROg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6mj-wy-03u"/>
                             <constraint firstItem="gTr-Z3-cmq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EZ1-iC-qiZ"/>
-                            <constraint firstAttribute="trailing" secondItem="uhI-a7-Xqh" secondAttribute="trailing" constant="20" id="MfS-OX-Pft"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uhI-a7-Xqh" secondAttribute="trailing" constant="20" id="JML-Aw-nVg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uhI-a7-Xqh" secondAttribute="bottom" constant="20" id="LJ3-Lz-0Wk"/>
                             <constraint firstItem="BVD-Tg-2dQ" firstAttribute="centerY" secondItem="gTr-Z3-cmq" secondAttribute="centerY" id="Q84-F6-HsC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BVD-Tg-2dQ" secondAttribute="trailing" constant="20" id="SYt-Dx-emO"/>
                             <constraint firstItem="gTr-Z3-cmq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ver-ij-dTz"/>
                             <constraint firstAttribute="bottom" secondItem="gTr-Z3-cmq" secondAttribute="bottom" id="aK9-6J-Heb"/>
+                            <constraint firstItem="BVD-Tg-2dQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-70" id="lFy-ro-cZu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pzq-Ue-ROg" secondAttribute="bottom" constant="20" id="ofE-Nt-yax"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTr-Z3-cmq" secondAttribute="trailing" id="wZx-KL-s2v"/>
                         </constraints>
                     </view>
@@ -90,7 +138,10 @@
                         <outlet property="currentLocationButton" destination="uhI-a7-Xqh" id="Xtt-Vi-vsQ"/>
                         <outlet property="decreaseScaleButton" destination="mHl-JK-FUS" id="kTr-bM-LLF"/>
                         <outlet property="increaseScaleButton" destination="adw-ml-pGh" id="6XH-dc-5yj"/>
+                        <outlet property="loadPreviousTrackButton" destination="Ik8-3P-z9l" id="vbL-nJ-eyx"/>
                         <outlet property="mapView" destination="gTr-Z3-cmq" id="tk3-aJ-XCK"/>
+                        <outlet property="newTrackButton" destination="Gqf-Rf-nb4" id="fpS-gV-YpT"/>
+                        <outlet property="stopTrackButton" destination="Dki-19-UT7" id="9k0-qj-gkq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -99,9 +150,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="externaldrive.badge.timemachine" catalog="system" width="128" height="86"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <image name="minus" catalog="system" width="128" height="26"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="stop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

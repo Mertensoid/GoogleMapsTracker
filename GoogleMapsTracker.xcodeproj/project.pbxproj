@@ -602,6 +602,9 @@
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsTracker/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Разрешить геопозицию?";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Разрешить геопозицию?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешить геопозицию?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -630,6 +633,9 @@
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsTracker/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Разрешить геопозицию?";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Разрешить геопозицию?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешить геопозицию?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
