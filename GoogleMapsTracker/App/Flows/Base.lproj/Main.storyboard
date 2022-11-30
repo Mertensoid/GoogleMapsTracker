@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleMapsTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="GoogleMapsTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,16 +20,78 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhI-a7-Xqh">
+                                <rect key="frame" x="323" y="748" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="KUQ-w3-Bc8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="OfN-ey-mIK"/>
+                                    <constraint firstAttribute="height" constant="50" id="TgS-Iv-vkn"/>
+                                    <constraint firstAttribute="width" constant="50" id="e1Y-hL-Lbr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToCurrentLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aD6-ci-CG1"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BVD-Tg-2dQ">
+                                <rect key="frame" x="323" y="366" width="50" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adw-ml-pGh">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="MNd-va-yWW"/>
+                                            <constraint firstAttribute="height" constant="50" id="Ryp-Cp-uf7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="increaseScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFx-SF-hsw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHl-JK-FUS">
+                                        <rect key="frame" x="0.0" y="70" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7vp-Wp-ZdR"/>
+                                            <constraint firstAttribute="width" constant="50" id="Qeh-Up-QUp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="decreaseScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fI5-84-grx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uhI-a7-Xqh" secondAttribute="bottom" constant="20" id="6Ji-Eg-GKq"/>
                             <constraint firstItem="gTr-Z3-cmq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EZ1-iC-qiZ"/>
+                            <constraint firstAttribute="trailing" secondItem="uhI-a7-Xqh" secondAttribute="trailing" constant="20" id="MfS-OX-Pft"/>
+                            <constraint firstItem="BVD-Tg-2dQ" firstAttribute="centerY" secondItem="gTr-Z3-cmq" secondAttribute="centerY" id="Q84-F6-HsC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BVD-Tg-2dQ" secondAttribute="trailing" constant="20" id="SYt-Dx-emO"/>
                             <constraint firstItem="gTr-Z3-cmq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ver-ij-dTz"/>
                             <constraint firstAttribute="bottom" secondItem="gTr-Z3-cmq" secondAttribute="bottom" id="aK9-6J-Heb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTr-Z3-cmq" secondAttribute="trailing" id="wZx-KL-s2v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentLocationButton" destination="uhI-a7-Xqh" id="Xtt-Vi-vsQ"/>
+                        <outlet property="decreaseScaleButton" destination="mHl-JK-FUS" id="kTr-bM-LLF"/>
+                        <outlet property="increaseScaleButton" destination="adw-ml-pGh" id="6XH-dc-5yj"/>
+                        <outlet property="mapView" destination="gTr-Z3-cmq" id="tk3-aJ-XCK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,6 +99,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location.fill" catalog="system" width="128" height="119"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
