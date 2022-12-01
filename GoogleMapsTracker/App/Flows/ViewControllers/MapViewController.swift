@@ -38,10 +38,62 @@ class MapViewController: UIViewController {
         routePath = GMSMutablePath()
         route?.map = mapView
         locationManager?.startUpdatingLocation()
+        isTracking.toggle()
     }
     @IBAction func stopTrack(_ sender: UIButton) {
+        if isTracking {
+            isTracking.toggle()
+            route?.map = nil
+            locationManager?.stopUpdatingLocation()
+            if let encoded = try? JSONEncoder().encode(routePoints) {
+                UserDefaults.standard.set(encoded, forKey: "route")
+            }
+        }
     }
     @IBAction func loadPreviousTrack(_ sender: UIButton) {
+        if isTracking {
+            let alert = UIAlertController(title: "Подтверждение", message: "Остановить текущий маршрут?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { _ in
+                self.isTracking.toggle()
+                self.route?.map = nil
+                self.locationManager?.stopUpdatingLocation()
+                if let encoded = try? JSONEncoder().encode(self.routePoints) {
+                    UserDefaults.standard.set(encoded, forKey: "route")
+                }
+                
+                self.route?.map = self.mapView
+                if let data = UserDefaults.standard.object(forKey: "route") as? Data,
+                   let routePoints = try? JSONDecoder().decode([Coordinate].self, from: data) {
+                    self.routePoints = routePoints
+                    for point in routePoints {
+                        self.routePath = GMSMutablePath()
+                        self.routePath?.add(CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude))
+                    }
+                    self.route?.path = self.routePath
+                    if let path = self.routePath {
+                        let bounds = GMSCoordinateBounds(path: path)
+                        self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 40))
+                    }
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            self.route?.map = self.mapView
+            if let data = UserDefaults.standard.object(forKey: "route") as? Data,
+               let routePoints = try? JSONDecoder().decode([Coordinate].self, from: data) {
+                self.routePoints = routePoints
+                for point in routePoints {
+                    self.routePath = GMSMutablePath()
+                    self.routePath?.add(CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude))
+                }
+                self.route?.path = self.routePath
+                if let path = self.routePath {
+                    let bounds = GMSCoordinateBounds(path: path)
+                    mapView.animate(with: GMSCameraUpdate.fit(bounds))
+                }
+            }
+        }
     }
     
     var currentCoordinate = CLLocationCoordinate2D(
@@ -56,7 +108,8 @@ class MapViewController: UIViewController {
     
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
-    var routePoints = [CLLocation]()
+    var routePoints = [Coordinate]()
+    var isTracking = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +169,7 @@ extension MapViewController: CLLocationManagerDelegate {
         mapView.camera = camera
         
         routePath?.add(location.coordinate)
-        routePoints.append(location)
+        routePoints.append(Coordinate(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
         route?.path = routePath
         
         print(location.coordinate)
