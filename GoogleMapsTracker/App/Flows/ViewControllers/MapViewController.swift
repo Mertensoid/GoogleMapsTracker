@@ -72,7 +72,8 @@ class MapViewController: UIViewController {
                     self.route?.path = self.routePath
                     if let path = self.routePath {
                         let bounds = GMSCoordinateBounds(path: path)
-                        self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 40))
+                        let update = GMSCameraUpdate.fit(bounds, withPadding: 40)
+                        self.mapView.animate(with: update)
                     }
                 }
             }))
@@ -90,7 +91,8 @@ class MapViewController: UIViewController {
                 self.route?.path = self.routePath
                 if let path = self.routePath {
                     let bounds = GMSCoordinateBounds(path: path)
-                    mapView.animate(with: GMSCameraUpdate.fit(bounds))
+                    let update = GMSCameraUpdate.fit(bounds, withPadding: 40)
+                    self.mapView.animate(with: update)
                 }
             }
         }
