@@ -15,5 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyBZSEn_Da-P7keWqD5AQDhZR6efleU0aBE")
         return true
     }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        // не успел разобраться, сделаю в следующем дз
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // не успел разобраться, сделаю в следующем дз
+    }
 }
 
